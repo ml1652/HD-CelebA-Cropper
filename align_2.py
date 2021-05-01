@@ -23,18 +23,20 @@ import tqdm
 parser = argparse.ArgumentParser()
 # main
 #parser.add_argument('--img_dir', dest='img_dir', default='./data/img_celeba')
-parser.add_argument('--img_dir', dest='img_dir', default= r"C:\Users\Mingrui\Desktop\Github\pytorch_stylegan_encoder\alignment_image_for_test")
-parser.add_argument('--save_dir', dest='save_dir', default= r"C:\Users\Mingrui\Desktop\datasets\StyleGANimge_corp\webimage_alignmentTest")
+#parser.add_argument('--img_dir', dest='img_dir', default= r"C:\Users\Mingrui\Desktop\Github\pytorch_stylegan_encoder\alignment_image_for_test")
+parser.add_argument('--img_dir', dest='img_dir', default= r"C:\Users\Mingrui\Desktop\New folder (2)")
+#parser.add_argument('--save_dir', dest='save_dir', default= r"C:\Users\Mingrui\Desktop\datasets\StyleGANimge_corp\webimage_alignmentTest")
+parser.add_argument('--save_dir', dest='save_dir', default=r"C:\Users\Mingrui\Desktop\New folder (4)")
 parser.add_argument('--landmark_file', dest='landmark_file', default='./data/landmark.txt')
 parser.add_argument('--standard_landmark_file', dest='standard_landmark_file', default='./data/standard_landmark_68pts.txt')
-parser.add_argument('--crop_size_h', dest='crop_size_h', type=int, default=572)
-parser.add_argument('--crop_size_w', dest='crop_size_w', type=int, default=572)
+parser.add_argument('--crop_size_h', dest='crop_size_h', type=int, default=224)
+parser.add_argument('--crop_size_w', dest='crop_size_w', type=int, default=224)
 parser.add_argument('--move_h', dest='move_h', type=float, default=0.25)
 parser.add_argument('--move_w', dest='move_w', type=float, default=0.)
 parser.add_argument('--save_format', dest='save_format', choices=['jpg', 'png'], default='jpg')
 parser.add_argument('--n_worker', dest='n_worker', type=int, default=4)
 # others
-parser.add_argument('--face_factor', dest='face_factor', type=float, help='The facto r of face area relative to the output image.', default=0.45) #default = 0.5
+parser.add_argument('--face_factor', dest='face_factor', type=float, help='The facto r of face area relative to the output image.', default=0.8) #default = 0.5
 parser.add_argument('--align_type', dest='align_type', choices=['affine', 'similarity'], default='similarity')
 parser.add_argument('--order', dest='order', type=int, choices=[0, 1, 2, 3, 4, 5], help='The order of interpolation.', default=3)
 parser.add_argument('--mode', dest='mode', choices=['constant', 'edge', 'symmetric', 'reflect', 'wrap'], default='edge')
